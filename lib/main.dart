@@ -14,7 +14,7 @@ void main() {
       title: 'Flutter for class',
       initialRoute: '/',
       routes: {
-        '/': (context) => const datatablescreen(),
+        '/': (context) => datatablescreen(),
         '/studentDetailsScreen': (context) => const StudentDetailsScreen(),
         '/displaystudentscreen': (context) => const displaystudentscreen(),
 
