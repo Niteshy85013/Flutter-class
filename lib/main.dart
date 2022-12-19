@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:test/listtilescreen.dart';
 import 'package:test/screen/Data_tablescreen.dart';
+import 'package:test/screen/bottom_screen/dashboard.dart';
+import 'package:test/screen/bottomnavigation.dart';
 
 import 'package:test/screen/display_student.dart';
+import 'package:test/screen/stack.dart';
 import 'package:test/screen/student_screen.dart';
 
 import 'arithmeticoutput.dart';
@@ -14,7 +17,7 @@ void main() {
       title: 'Flutter for class',
       initialRoute: '/',
       routes: {
-        '/': (context) => datatablescreen(),
+        '/': (context) => dashboardscreen(),
         '/studentDetailsScreen': (context) => const StudentDetailsScreen(),
         '/displaystudentscreen': (context) => const displaystudentscreen(),
 
