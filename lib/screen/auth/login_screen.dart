@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:passwordfield/passwordfield.dart';
 
@@ -24,7 +25,6 @@ class _loginscreenState extends State<loginscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromARGB(255, 103, 219, 225),
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -52,7 +52,7 @@ class _loginscreenState extends State<loginscreen> {
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                         fontSize: 25,
-                        fontFamily: "Montserrat Black",
+                        fontFamily: "OpenSans Bold",
                       ),
                     ),
                   ),
@@ -119,12 +119,41 @@ class _loginscreenState extends State<loginscreen> {
                 const SizedBox(
                   height: 20,
                 ),
+                Container(
+                  alignment: Alignment.centerRight,
+                  child: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                          text: 'Forgot Password?',
+                          style: const TextStyle(
+                            color: Colors.blue,
+                            fontSize: 20,
+                            fontFamily: "OpenSans Bold",
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () => {
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/registerscreen',
+                                  )
+                                })
+                    ]),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
                 SizedBox(
                   width: 350,
                   height: 50,
                   child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          backgroundColor: Colors.green),
                       onPressed: () {},
-                      style: raisedButtonStyle,
                       child: const Text(
                         'Login',
                         style: TextStyle(fontSize: 20),
@@ -137,13 +166,13 @@ class _loginscreenState extends State<loginscreen> {
                   width: 350,
                   height: 50,
                   child: ElevatedButton(
+                      style: raisedButtonStyle,
                       onPressed: () {
                         Navigator.pushNamed(
                           context,
                           '/registerscreen',
                         );
                       },
-                      style: raisedButtonStyle,
                       child: const Text('Register',
                           style: TextStyle(fontSize: 20))),
                 ),
