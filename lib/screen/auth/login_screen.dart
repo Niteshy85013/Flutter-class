@@ -10,7 +10,6 @@ class loginscreen extends StatefulWidget {
 
 class _loginscreenState extends State<loginscreen> {
   final _firstController = TextEditingController();
-  
 
   final _globalKey = GlobalKey<FormState>();
 
@@ -40,6 +39,22 @@ class _loginscreenState extends State<loginscreen> {
                     'assets/images/learn1.png',
                     height: 200,
                     width: 300,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: const SizedBox(
+                    child: Text(
+                      'Login ',
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontSize: 25,
+                        fontFamily: "Montserrat Black",
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -122,7 +137,12 @@ class _loginscreenState extends State<loginscreen> {
                   width: 350,
                   height: 50,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/registerscreen',
+                        );
+                      },
                       style: raisedButtonStyle,
                       child: const Text('Register',
                           style: TextStyle(fontSize: 20))),
